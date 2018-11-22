@@ -1,0 +1,134 @@
+/**
+ * A simple theme for reveal.js presentations, similar
+ * to the default theme. The accent color is darkblue.
+ *
+ * This theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
+ * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+
+// Include theme-specific fonts
+@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
+
+// Override theme settings (see ../template/settings.scss)
+$red: #FF4139;
+$blue: #156FFF;
+$yellow: #FFD800;
+
+$mainFont:  'ATC Harris', 'Menlo', monospace;
+$mainFontSize: 28px;
+$mainColor: #3A3A3A;
+$headingFont: 'Din', 'Din Next LT Pro', sans-serif;
+$headingColor: $red;
+$headingTextShadow: none;
+$headingTextTransform: none;
+$backgroundColor: #ECECE9;
+$linkColor: $blue;
+$linkColorHover: lighten( $linkColor, 20% );
+$selectionBackgroundColor: rgba(0, 0, 0, 0.6);
+
+$heading1Size: 2.75em;
+$heading2Size: 1.8em;
+$heading3Size: 1.4em;
+$heading4Size: 1.00em;
+
+$controlArrowSize: 30px;
+
+
+section.has-dark-background {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: #fff;
+	}
+}
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+.reveal {
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+  }
+
+  .slides {
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  mark, strong {
+    background-color: rgba($yellow, 0.8);
+  }
+  
+  section img {
+    border: 6px solid #fff;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
+    display: block;
+    margin: 1em auto;
+  }
+  
+  blockquote {
+    display: block;
+    position: relative;
+    width: 85%;
+    margin: 20px auto;
+    padding: 5px;
+    padding-left: 2em;
+    font-style: italic;
+    background: darken($backgroundColor, 5%);
+    border-left: 4px solid $red;
+    box-shadow: none;
+  }
+  
+  .controls {
+    .controls-arrow {
+      background-image: url('../../img/fleche-bleue-gauche.png');
+      background-size: 80% auto;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .controls-arrow:before,
+    .controls-arrow:after {
+      display: none;
+    }
+  }
+}
+
+html {
+  &.home {
+    body {
+      background-image: url('../../img/double-cercle.png');
+      background-position: -10% 45vh;
+      background-repeat: no-repeat;
+      background-size: 70vh auto;
+    }
+    .reveal .slides {
+      text-align: center;
+    }
+  }
+  &.center {
+    .reveal .slides {
+      text-align: center;
+    }
+  }
+  &.section {
+    body {
+      background: $red;
+    }
+    
+    .reveal {
+      h1, h2, h3, h4, h5, h6 {
+        color: $backgroundColor;
+      }
+    }
+  }
+}
