@@ -12,3 +12,7 @@ package-lock.json
 .sass-cache
 css/reveal.min.css
 js/reveal.min.js
+
+# Do not commit these fonts
+lib/font/din
+lib/font/atcharris

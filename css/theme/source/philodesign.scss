@@ -13,10 +13,10 @@
 // ---------------------------------------------
 
 
-
 // Include theme-specific fonts
-@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+// Careful : these are not committed to the repo
+@import url('../../lib/font/atcharris/stylesheet.css');
+@import url('../../lib/font/din/stylesheet.css');
 
 
 // Override theme settings (see ../template/settings.scss)
@@ -34,7 +34,8 @@ $headingTextTransform: none;
 $backgroundColor: #ECECE9;
 $linkColor: $blue;
 $linkColorHover: lighten( $linkColor, 20% );
-$selectionBackgroundColor: rgba(0, 0, 0, 0.6);
+$selectionBackgroundColor: rgba($mainColor, 0.15);
+$selectionColor: currentcolor;
 
 $heading1Size: 2.75em;
 $heading2Size: 1.8em;
@@ -72,17 +73,24 @@ section.has-dark-background {
   section img {
     border: 6px solid #fff;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
-    display: block;
-    margin: 1em auto;
+    max-height: 55vh;
+  }
+  
+  ul, ol {
+    padding-left: 3em;
+    margin: .5em 0;
+    
+    li {
+      margin-bottom: .5em;
+    }
   }
   
   blockquote {
     display: block;
     position: relative;
     width: 85%;
-    margin: 20px auto;
-    padding: 5px;
-    padding-left: 2em;
+    margin: 20px 0;
+    padding: .5em 1em .5em 2.5em;
     font-style: italic;
     background: darken($backgroundColor, 5%);
     border-left: 4px solid $red;
@@ -96,6 +104,8 @@ section.has-dark-background {
       background-position: center;
       background-repeat: no-repeat;
     }
+
+    // Do not show pseudo-elements (using background on `.controls-arrow`)
     .controls-arrow:before,
     .controls-arrow:after {
       display: none;
@@ -128,6 +138,15 @@ html {
     .reveal {
       h1, h2, h3, h4, h5, h6 {
         color: $backgroundColor;
+      }
+    }
+  }
+  &.image {
+    .reveal .slides {
+      text-align: center;
+      img {
+        display: block;
+        margin: 1em auto;
       }
     }
   }

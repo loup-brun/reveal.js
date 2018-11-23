@@ -5,8 +5,8 @@
  * This theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
  * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
-@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+@import url("../../lib/font/atcharris/stylesheet.css");
+@import url("../../lib/font/din/stylesheet.css");
 section.has-dark-background, section.has-dark-background h1, section.has-dark-background h2, section.has-dark-background h3, section.has-dark-background h4, section.has-dark-background h5, section.has-dark-background h6 {
   color: #fff; }
 
@@ -24,13 +24,13 @@ body {
   color: #3A3A3A; }
 
 ::selection {
-  color: #fff;
-  background: rgba(0, 0, 0, 0.6);
+  color: currentcolor;
+  background: rgba(58, 58, 58, 0.15);
   text-shadow: none; }
 
 ::-moz-selection {
-  color: #fff;
-  background: rgba(0, 0, 0, 0.6);
+  color: currentcolor;
+  background: rgba(58, 58, 58, 0.15);
   text-shadow: none; }
 
 .reveal .slides section,
@@ -288,16 +288,20 @@ body {
 .reveal section img {
   border: 6px solid #fff;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
-  display: block;
-  margin: 1em auto; }
+  max-height: 55vh; }
+
+.reveal ul, .reveal ol {
+  padding-left: 3em;
+  margin: .5em 0; }
+  .reveal ul li, .reveal ol li {
+    margin-bottom: .5em; }
 
 .reveal blockquote {
   display: block;
   position: relative;
   width: 85%;
-  margin: 20px auto;
-  padding: 5px;
-  padding-left: 2em;
+  margin: 20px 0;
+  padding: .5em 1em .5em 2.5em;
   font-style: italic;
   background: #e0e0db;
   border-left: 4px solid #FF4139;
@@ -330,3 +334,9 @@ html.section body {
 
 html.section .reveal h1, html.section .reveal h2, html.section .reveal h3, html.section .reveal h4, html.section .reveal h5, html.section .reveal h6 {
   color: #ECECE9; }
+
+html.image .reveal .slides {
+  text-align: center; }
+  html.image .reveal .slides img {
+    display: block;
+    margin: 1em auto; }
